@@ -1,6 +1,7 @@
 package com.perfulandia.cl.clientes.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
@@ -24,5 +25,9 @@ public interface ClienteRepository extends JpaRepository<Cliente, Integer>{
 
     //metodo que revisa si un cliente existe por id
     boolean existsByIdCliente(int idCliente);
-
+    
+    //metodo SQL nativo que lista clientes por orden alfabético
+    @Query(value = "SELECT * FROM cliente ORDER BY nombre_cliente ASC", nativeQuery = true)
+    List<Cliente> findAllOrderByNombreCliente();
+    
 }

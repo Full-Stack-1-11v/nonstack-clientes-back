@@ -43,6 +43,6 @@ public class Cliente {
     private String domicilioCliente;
 
     @Column(name = "id_ciudad")
-    private int idCiudadiudad;
+    private Integer idCiudad;
 
 }

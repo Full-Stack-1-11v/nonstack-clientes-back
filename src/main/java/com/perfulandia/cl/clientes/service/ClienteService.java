@@ -59,5 +59,9 @@ public class ClienteService {
     public List<Cliente> findByRut(Cliente cliente){
         return clienteRepository.findByRutCliente(cliente.getRutCliente());
     }
-    
+    //metodo que filtra clientes por orden alfabético
+    public List<Cliente> findAllOrderByNombreCliente() {
+        return clienteRepository.findAllOrderByNombreCliente();
+    }
+   
 }

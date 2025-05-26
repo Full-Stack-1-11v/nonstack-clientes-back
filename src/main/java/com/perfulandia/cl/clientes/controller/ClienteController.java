@@ -80,4 +80,11 @@ public class ClienteController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND); // 404
         }
     }
+
+    //metodo SQL nativo que lista clientes por orden alfabético
+    @GetMapping("/listar/af")
+    public List<Cliente> listarClientesOrdenados(){
+        return clienteService.findAllOrderByNombreCliente();
+    }
+
 }
