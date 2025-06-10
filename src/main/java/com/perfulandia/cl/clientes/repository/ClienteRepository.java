@@ -11,6 +11,10 @@ import com.perfulandia.cl.clientes.model.Cliente;
 @Repository
 public interface ClienteRepository extends JpaRepository<Cliente, Integer>{
 
+
+
+    //metodo que lista todos los clientes
+    List<Cliente> findAll();
     //metodo que lista cliente por id
     Optional<Cliente> findByIdCliente(int idCliente);
 
@@ -29,5 +33,8 @@ public interface ClienteRepository extends JpaRepository<Cliente, Integer>{
     //metodo SQL nativo que lista clientes por orden alfabético
     @Query(value = "SELECT * FROM cliente ORDER BY nombre_cliente ASC", nativeQuery = true)
     List<Cliente> findAllOrderByNombreCliente();
+
+    
+
     
 }

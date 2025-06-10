@@ -50,10 +50,7 @@ public class ClienteService {
         return clienteRepository.save(cliente);
     }
 
-    //metodo que busca un cliente por nombre
-    public List<Cliente> findByNombre(Cliente cliente){
-        return clienteRepository.findByNombreCliente(cliente.getNombreCliente());
-    }
+    
 
     //metodo que busca un cliente por rut
     public List<Cliente> findByRut(Cliente cliente){
