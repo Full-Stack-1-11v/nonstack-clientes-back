@@ -93,4 +93,29 @@ public class ClienteServiceTest {
 
     }
 
+    @Test
+    public void testFindByRut(){
+
+        Cliente cliente = new Cliente(1, 12345678, "K", "Juan", null, null, null, null, 12345678);
+
+        when(clienteRepository.findByRutCliente(cliente.getRutCliente())).thenReturn(List.of(cliente));
+
+        List<Cliente> clientes = clienteService.findByRut(cliente);
+
+        assertNotNull(clientes);
+        assertEquals(clientes.size(),1);
+    }
+
+
+    @Test
+    public void testFindAllOrderByNombreCliente(){
+
+        when(clienteRepository.findAllOrderByNombreCliente()).thenReturn(List.of(new Cliente(1, 12345678, "Juan", null, null, null, null, null, 12345678)));
+
+        List<Cliente> clientes = clienteService.findAllOrderByNombreCliente();
+
+        assertNotNull(clientes);
+        assertEquals(clientes.size(),1);
+    }
+
 }

@@ -19,10 +19,7 @@ public class ClienteService {
     //metodo que lista a todos los clientes
     public List<Cliente> findAll(){
         List<Cliente> clientes = clienteRepository.findAll();
-        if(clientes.isEmpty()){
-            System.out.println("No hay clientes");
-            return null;
-        }
+        
         return clientes;
     }
 
